@@ -8,8 +8,6 @@ int main(int argn, char** args){
     real_input.setElementByIndex(1, 5);
     Data real_output = Data(1);
     real_output.setElementByIndex(0, 16);
-    Data eval_output = Data(1);
-    eval_output.setElementByIndex(0, 12);
 
     Datapoint datapoint = Datapoint(&real_input, &real_output);
 
@@ -18,12 +16,11 @@ int main(int argn, char** args){
     double loss_val = 100;
 
     int epoch = 1;
-    while(loss_val>2 && epoch<100){
+    while(loss_val>1 && epoch<100){
         model->evaluate(&datapoint);
         model->updateModel(&datapoint);
         loss_val = loss->computeLoss(datapoint);
-        cout<<epoch<<":"<<loss_val<<" "<<endl;
-        da
+        cout<<epoch<<":"<<loss_val<<" "<<datapoint.getEvalOutput().getElementByIndex(0)<<endl;
         epoch++;
     }
 
