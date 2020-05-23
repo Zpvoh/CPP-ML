@@ -13,15 +13,18 @@ int main(int argn, char** args){
 
     Datapoint datapoint = Datapoint(&real_input, &real_output);
 
-    Model* model = new Perceptron(datapoint.inputSize(), 1.0);
+    Model* model = new Perceptron(datapoint.inputSize(), 0.01);
     Loss* loss = new SquareLoss();
     double loss_val = 100;
 
-    while(loss_val>5){
+    int epoch = 1;
+    while(loss_val>2 && epoch<100){
         model->evaluate(&datapoint);
         model->updateModel(&datapoint);
         loss_val = loss->computeLoss(datapoint);
-        cout<<loss_val<<endl;
+        cout<<epoch<<":"<<loss_val<<" "<<endl;
+        da
+        epoch++;
     }
 
     return 0;

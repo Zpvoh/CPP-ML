@@ -56,6 +56,6 @@ void Perceptron::updateModel(Datapoint *point)
         double x = point->getInput().getElementByIndex(i);
         double y_eval = point->getEvalOutput().getElementByIndex(i);
         double y_real = point->getRealOutput().getElementByIndex(i);
-        this->weights->setElementByIndex(i, weight - this->rate * (y_real - y_eval) * x);
+        this->weights->setElementByIndex(i, weight + this->rate * (y_real - y_eval) * x);
     }
 }
