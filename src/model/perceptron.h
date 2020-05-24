@@ -1,4 +1,5 @@
 #include "model.h"
+#include <cstdlib>
 
 #ifndef ML_PERCEPTRON
 #define ML_PERCEPTRON

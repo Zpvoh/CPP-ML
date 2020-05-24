@@ -25,11 +25,13 @@
 			"command": "g++",
 			"args": [
 				"-g",
-				"${workspaceFolder}/data/data.cpp",
-				"${workspaceFolder}/data/datapoint.cpp",
-				"${workspaceFolder}/loss/square_loss.cpp",
-				"${workspaceFolder}/model/perceptron.cpp",
-				"${workspaceFolder}/main.cpp",
+				"${workspaceFolder}/src/data/data.cpp",
+				"${workspaceFolder}/src/data/datapoint.cpp",
+				"${workspaceFolder}/src/data/data_loader.cpp",
+				"${workspaceFolder}/src/data/dataset.cpp",
+				"${workspaceFolder}/src/loss/square_loss.cpp",
+				"${workspaceFolder}/src/model/perceptron.cpp",
+				"${workspaceFolder}/src/main.cpp",
 				"-o",
 				"${fileDirname}/${fileBasenameNoExtension}"
 			],

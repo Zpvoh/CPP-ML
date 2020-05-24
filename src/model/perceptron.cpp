@@ -1,14 +1,11 @@
 #include "perceptron.h"
-#include <random>
 
 Perceptron::Perceptron(int inputSize, double rate)
 {
-    default_random_engine e;
-    uniform_real_distribution<double> u(-10, 10);
     this->weights = new Data(0);
     for (int i = 0; i < inputSize; i++)
     {
-        this->weights->addElement(u(e));
+        this->weights->addElement(rand()%20-10);
     }
 
     this->rate = rate;
