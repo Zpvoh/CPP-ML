@@ -1,6 +1,6 @@
 #include "datapoint.h"
 
-Datapoint::Datapoint(int sizeInput, int sizeOutput){
+Datapoint::Datapoint(int32_t sizeInput, int32_t sizeOutput){
     this->input = new Data(sizeInput);
     this->realOutput = new Data(sizeOutput);
     this->evalOutput = new Data(sizeOutput);
@@ -28,10 +28,10 @@ Data Datapoint::getEvalOutput(){
     return *(this->evalOutput);
 }
 
-int Datapoint::inputSize(){
+int32_t Datapoint::inputSize(){
     return this->inputLength;
 }
 
-int Datapoint::outputSize(){
+int32_t Datapoint::outputSize(){
     return this->outputLength;
 }

@@ -1,24 +1,24 @@
 #include "data.h"
 
-#ifndef ML_DATAPOINT
-#define ML_DATAPOINT
+#ifndef ML_DATApoint
+#define ML_DATApoint
 
 class Datapoint {
     protected:
-        int inputLength;
-        int outputLength;
+        int32_t inputLength;
+        int32_t outputLength;
         Data* input;
         Data* realOutput;
         Data* evalOutput;
         friend class Perceptron;
     public:
-        Datapoint(int, int);
+        Datapoint(int32_t, int32_t);
         Datapoint(Data*, Data*);
         Data getInput();
         Data getRealOutput();
         Data getEvalOutput();
-        int inputSize();
-        int outputSize();
+        int32_t inputSize();
+        int32_t outputSize();
 };
 
 #endif

@@ -3,14 +3,14 @@
 
 class Dataset{
     protected:
-        int dataSize;
+        int32_t dataSize;
         vector<Datapoint*> dataset;
     public:
         Dataset();
         Dataset(vector<Datapoint*>);
         void shuffle();
         Datapoint* getDatapointRandom();
-        Datapoint* getDatapointByIndex(int);
+        Datapoint* getDatapointByIndex(int32_t);
         void addDatapoint(Datapoint*);
-        int size();
+        int32_t size();
 };

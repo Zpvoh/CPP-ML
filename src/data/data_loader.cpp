@@ -1,6 +1,6 @@
 #include "data_loader.h"
 
-int headerToType(string header)
+int32_t headerToType(string header)
 {
     char type_char = header[0];
     return type_char == 'x' ? data_type::in : data_type::out;
@@ -12,7 +12,7 @@ DataLoader::DataLoader(string filename)
     ifstream inputStream(filename);
     string headerLine;
     vector<string> headers;
-    vector<int> headerTypes;
+    vector<int32_t> headerTypes;
 
     inputStream >> headerLine;
     istringstream ssHeader(headerLine);
@@ -31,7 +31,7 @@ DataLoader::DataLoader(string filename)
         inputStream >> dataLine;
         istringstream ssData(dataLine);
 
-        vector<int>::iterator it = headerTypes.begin();
+        vector<int32_t>::iterator it = headerTypes.begin();
 
         Data* input = new Data(0);
         Data* output = new Data(0);

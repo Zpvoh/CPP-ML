@@ -9,7 +9,7 @@ Dataset::Dataset(vector<Datapoint*> dataset){
     this->dataSize=dataset.size();
 }
 
-int Dataset::size(){
+int32_t Dataset::size(){
     return this->dataSize;
 }
 
@@ -18,11 +18,11 @@ void Dataset::addDatapoint(Datapoint* point){
     this->dataSize++;
 }
 
-Datapoint* Dataset::getDatapointByIndex(int index){
+Datapoint* Dataset::getDatapointByIndex(int32_t index){
     return this->dataset[index];
 }
 
 Datapoint* Dataset::getDatapointRandom(){
-    int index = rand()%this->dataSize;
+    int32_t index = rand()%this->dataSize;
     return this->dataset[index];
 }
