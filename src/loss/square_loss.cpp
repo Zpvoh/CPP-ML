@@ -14,3 +14,13 @@ double SquareLoss::computeLoss(Datapoint point){
         return loss;
     }
 }
+
+double SquareLoss::computeLoss(Dataset batch){
+    double sum = 0;
+
+    for(int i=0; i<batch.size(); i++){
+        double loss = this->computeLoss(*(batch.getDatapointByIndex(i)));
+        sum+=loss;
+    }
+    return sum/batch.size();
+}

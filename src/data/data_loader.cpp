@@ -9,6 +9,7 @@ int32_t headerToType(string header)
 DataLoader::DataLoader(string filename)
 {
     this->filename = filename;
+    this->dataset = new Dataset();
     ifstream inputStream(filename);
     string headerLine;
     vector<string> headers;
@@ -54,12 +55,12 @@ DataLoader::DataLoader(string filename)
         }
 
         Datapoint* point = new Datapoint(input, output);
-        this->dataset.addDatapoint(point);
+        this->dataset->addDatapoint(point);
     }
 
     inputStream.close();
 }
 
-Dataset DataLoader::getDataset(){
+Dataset* DataLoader::getDataset(){
     return this->dataset;
 }

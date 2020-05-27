@@ -8,14 +8,14 @@
             "name": "clang++ - Build and debug active file",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}/${fileBasenameNoExtension}",
-            "args": ["1000"],
+            "program": "${workspaceFolder}/main",
+            "args": ["--train", "1000"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
             "MIMode": "lldb",
-            "preLaunchTask": "shell: g++ build active file"
+            "preLaunchTask": "cmake"
         }
     ]
 }

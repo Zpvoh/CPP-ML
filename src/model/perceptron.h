@@ -21,6 +21,7 @@ class Perceptron: public Model{
         bool saveModel(string);
         Data* evaluate(Datapoint*);
         void updateModel(Datapoint*);
+        void train(Dataset*, int);
         void printArgs();
 };
 

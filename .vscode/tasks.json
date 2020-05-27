@@ -3,25 +3,7 @@
 	"tasks": [
 		{
 			"type": "shell",
-			"label": "shell: clang++ build active file",
-			"command": "/usr/bin/clang++",
-			"args": [
-				"-g",
-				"data/data.cpp main.cpp",
-				"-o",
-				"${fileDirname}/${fileBasenameNoExtension}"
-			],
-			"options": {
-				"cwd": "/usr/bin"
-			},
-			"problemMatcher": [
-				"$gcc"
-			],
-			"group": "build"
-		},
-		{
-			"type": "shell",
-			"label": "shell: g++ build active file",
+			"label": "g++",
 			"command": "g++",
 			"args": [
 				"-g",
@@ -33,8 +15,21 @@
 				"${workspaceFolder}/src/model/perceptron.cpp",
 				"${workspaceFolder}/src/main.cpp",
 				"-o",
-				"${fileDirname}/${fileBasenameNoExtension}"
+				"${workspaceFolder}/main"
 			],
+			"options": {
+				"cwd": "/usr/bin"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build"
+		},
+		{
+			"type": "shell",
+			"label": "cmake",
+			"command": "make",
+			"args": ["-C", "${workspaceFolder}"],
 			"options": {
 				"cwd": "/usr/bin"
 			},

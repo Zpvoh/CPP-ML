@@ -6,6 +6,7 @@
 class SquareLoss: public Loss {
     public:
         double computeLoss(Datapoint);
+        double computeLoss(Dataset);
 };
 
 #endif

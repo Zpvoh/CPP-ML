@@ -4,6 +4,8 @@
 #include <fstream>
 #include <sstream>
 
+#ifndef ML_DATA_LOADER
+#define ML_DATA_LOADER
 namespace data_type{
     enum dataType{
         in,
@@ -15,8 +17,9 @@ namespace data_type{
 class DataLoader {
     protected:
         string filename;
-        Dataset dataset;
+        Dataset* dataset;
     public:
         DataLoader(string);
-        Dataset getDataset();
+        Dataset* getDataset();
 };
+#endif

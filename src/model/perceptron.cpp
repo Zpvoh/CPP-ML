@@ -72,7 +72,7 @@ void Perceptron::updateModel(Datapoint *point)
 
     double y_eval = point->getEvalOutput().getElementByIndex(0);
     double y_real = point->getRealOutput().getElementByIndex(0);
-    double y_diff = y_eval * y_real < 0 ? y_real*2-1 : 0;
+    double y_diff = y_eval * y_real < 0 ? y_real : 0;
     for (int32_t i = 0; i < point->inputSize(); i++)
     {
         double weight = this->weights->getElementByIndex(i);
@@ -81,6 +81,16 @@ void Perceptron::updateModel(Datapoint *point)
     }
 
     this->b = this->b + this->rate * y_diff;
+}
+
+void Perceptron::train(Dataset* dataset, int N){
+    int32_t epoch = 0;
+    while(epoch<N){
+        Datapoint* datapoint = dataset->getDatapointRandom();
+        this->evaluate(datapoint);
+        this->updateModel(datapoint);
+        epoch++;
+    }
 }
 
 bool Perceptron::readModel(string filename)

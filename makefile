@@ -5,10 +5,10 @@ src = $(shell find . -name "*.cpp")
 obj = $(src:%.cpp=%.o) 
  
 $(prom): $(obj)
-	$(cc) -o $(prom) $(obj) -g
+	g++ -g -o $(prom) $(obj)
  
-%.o: %.c $(deps)
-	$(cc) -c $< -o $@
+%.o: %.cpp $(deps)
+	g++ -g -c $< -o $@
  
 clean:
-	rm -rf $(obj) $(prom)
+	rm -rf $(obj) $(prom) $(shell find . -name "*.dSYM")

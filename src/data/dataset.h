@@ -1,6 +1,8 @@
 #include "datapoint.h"
 #include <cstdlib>
 
+#ifndef ML_DATASET
+#define ML_DATASET
 class Dataset{
     protected:
         int32_t dataSize;
@@ -14,3 +16,4 @@ class Dataset{
         void addDatapoint(Datapoint*);
         int32_t size();
 };
+#endif
